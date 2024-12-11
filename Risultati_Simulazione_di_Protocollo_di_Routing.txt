@@ -1,0 +1,263 @@
+Tabelle di instradamento iniziali:
+DV(A) = {'A': 0, 'B': 1, 'C': 6, 'D': inf, 'E': inf}
+DV(B) = {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': inf}
+DV(C) = {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+DV(D) = {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': inf}
+DV(E) = {'E': 0, 'C': 7, 'D': 2, 'A': inf, 'B': inf}
+
+Iterazione: 1
+
+A riceve DV(A): {'A': 0, 'B': 1, 'C': 6, 'D': inf, 'E': inf}
+A Tabella prima: [A: 0,A; B: 1,B; C: 6,C; D: inf; E: inf]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 6,C; D: inf; E: inf]
+
+A riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': inf}
+A Tabella prima: [A: 0,A; B: 1,B; C: 6,C; D: inf; E: inf]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: inf]
+
+A riceve DV(C): {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: inf]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 13,C]
+
+B riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': inf}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: inf]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: inf]
+
+B riceve DV(A): {'A': 0, 'B': 1, 'C': 6, 'D': inf, 'E': inf}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: inf]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: inf]
+
+B riceve DV(C): {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: inf]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 9,C]
+
+B riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': inf}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 9,C]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+C riceve DV(C): {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+C Tabella prima: [A: 6,A; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+C Tabella dopo: [A: 6,A; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+
+C riceve DV(A): {'A': 0, 'B': 1, 'C': 6, 'D': inf, 'E': inf}
+C Tabella prima: [A: 6,A; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+C Tabella dopo: [A: 6,A; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+
+C riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': inf}
+C Tabella prima: [A: 6,A; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+
+C riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': inf}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 7,E]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(E): {'E': 0, 'C': 7, 'D': 2, 'A': inf, 'B': inf}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+D riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': inf}
+D Tabella prima: [A: inf; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: inf; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': inf}
+D Tabella prima: [A: inf; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(C): {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(E): {'E': 0, 'C': 7, 'D': 2, 'A': inf, 'B': inf}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+E riceve DV(E): {'E': 0, 'C': 7, 'D': 2, 'A': inf, 'B': inf}
+E Tabella prima: [A: inf; B: inf; C: 7,C; D: 2,D; E: 0,E]
+E Tabella dopo: [A: inf; B: inf; C: 7,C; D: 2,D; E: 0,E]
+
+E riceve DV(C): {'C': 0, 'A': 6, 'B': 2, 'D': 3, 'E': 7}
+E Tabella prima: [A: inf; B: inf; C: 7,C; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 13,C; B: 9,C; C: 7,C; D: 2,D; E: 0,E]
+
+E riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': inf}
+E Tabella prima: [A: 13,C; B: 9,C; C: 7,C; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 13,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+Tabelle di instradamento dopo l'iterazione:
+DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 13}
+DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 13, 'B': 3}
+
+Iterazione: 2
+
+A riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 13}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 13,C]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 13,C]
+
+A riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 13,C]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+
+A riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+
+B riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 13}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+C riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 13}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 13, 'B': 3}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+D riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 13, 'B': 3}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+E riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 13, 'B': 3}
+E Tabella prima: [A: 13,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 13,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+E riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+E Tabella prima: [A: 13,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 10,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+E riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+E Tabella prima: [A: 10,C; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+Tabelle di instradamento dopo l'iterazione:
+DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 4}
+DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 4, 'B': 3}
+
+Iterazione: 3
+
+A riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 4}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+
+A riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+
+A riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+A Tabella prima: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+A Tabella dopo: [A: 0,A; B: 1,B; C: 3,B; D: 2,B; E: 4,B]
+
+B riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 4}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+B riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+B Tabella prima: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+B Tabella dopo: [A: 1,A; B: 0,B; C: 2,C; D: 1,D; E: 3,D]
+
+C riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 4}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+C riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 4, 'B': 3}
+C Tabella prima: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+C Tabella dopo: [A: 3,B; B: 2,B; C: 0,C; D: 3,D; E: 5,D]
+
+D riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+D riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 4, 'B': 3}
+D Tabella prima: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+D Tabella dopo: [A: 2,B; B: 1,B; C: 3,C; D: 0,D; E: 2,E]
+
+E riceve DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 4, 'B': 3}
+E Tabella prima: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+E riceve DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+E Tabella prima: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+E riceve DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+E Tabella prima: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+E Tabella dopo: [A: 4,D; B: 3,D; C: 5,D; D: 2,D; E: 0,E]
+
+Tabelle di instradamento dopo l'iterazione:
+DV(A): {'A': 0, 'B': 1, 'C': 3, 'D': 2, 'E': 4}
+DV(B): {'B': 0, 'A': 1, 'C': 2, 'D': 1, 'E': 3}
+DV(C): {'C': 0, 'A': 3, 'B': 2, 'D': 3, 'E': 5}
+DV(D): {'D': 0, 'B': 1, 'C': 3, 'E': 2, 'A': 2}
+DV(E): {'E': 0, 'C': 5, 'D': 2, 'A': 4, 'B': 3}
+
+Nessun aggiornamento necessario
