@@ -1,12 +1,11 @@
 
-DISTANZA_MASSIMA = float('inf')  #distnza massima per i nodi non raggiungibili
 import sys
 
 #inizializzo un nodo
 class Node:
     def __init__(self, name):
         self.name = name         # Nome del nodo
-        self.routing_table = {}  # Tabella instradamento per ogni nodo. {nome-nodo: costo percorso più breve}
+        self.routing_table = {name: 0}  # Tabella instradamento per ogni nodo. {nome-nodo: costo percorso più breve}
         self.neighbors = {}      # Distanze dirette verso i vicini
 
 
@@ -18,6 +17,8 @@ class Node:
         updated = False
         for neighbor, cost in self.neighbors.items():
             for dest, actual_cost in neighbor.routing_table.items():
+                if dest == self.name:  #il costo verso sé stessi rimane 0
+                    continue
                 new_cost = cost + actual_cost
                 if dest not in self.routing_table or new_cost < self.routing_table[dest]:
                     self.routing_table[dest] = new_cost
@@ -29,7 +30,7 @@ class Node:
     leggibile la tabella di routing """
 
     def __str__(self):
-        table = f"Tabella di instradamento per nodo: {self.name}:\n"
+        table = f"Tabella di instradamento per nodo {self.name}:\n"
         for dest, cost in sorted(self.routing_table.items()):
             table += f"  Verso {dest}: {cost}\n"
         return table
@@ -74,14 +75,14 @@ class Network:
             if updates == 0:
                 break
 
-        print("\nFinal routing tables after convergence:")
+        print("\nTabelle di Routing finali:\n")
         self.print_routing_tables()
 
     def print_routing_tables(self):
         for node in self.nodes.values():
-            print("-------------")
+            print("----------------------")
             print(node)
-            print("-------------")
+            print("----------------------\n")
 
 
 if __name__ == "__main__":
