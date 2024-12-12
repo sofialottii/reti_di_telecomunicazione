@@ -1,0 +1,121 @@
+TABELLE DI INSTRADAMENTO INIZIALI
+----------------------
+Tabella di instradamento per nodo A:
+  Verso A: 0
+  Verso B: 1
+  Verso C: 4
+  Verso F: 4
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo B:
+  Verso A: 1
+  Verso B: 0
+  Verso C: 2
+  Verso D: 6
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo C:
+  Verso A: 4
+  Verso B: 2
+  Verso C: 0
+  Verso D: 3
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo D:
+  Verso B: 6
+  Verso C: 3
+  Verso D: 0
+  Verso E: 8
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo E:
+  Verso D: 8
+  Verso E: 0
+  Verso F: 2
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo F:
+  Verso A: 4
+  Verso E: 2
+  Verso F: 0
+
+----------------------
+
+
+Tabelle di Routing finali:
+
+----------------------
+Tabella di instradamento per nodo A:
+  Verso A: 0
+  Verso B: 1
+  Verso C: 3
+  Verso D: 6
+  Verso E: 6
+  Verso F: 4
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo B:
+  Verso A: 1
+  Verso B: 0
+  Verso C: 2
+  Verso D: 5
+  Verso E: 7
+  Verso F: 5
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo C:
+  Verso A: 3
+  Verso B: 2
+  Verso C: 0
+  Verso D: 3
+  Verso E: 9
+  Verso F: 7
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo D:
+  Verso A: 6
+  Verso B: 5
+  Verso C: 3
+  Verso D: 0
+  Verso E: 8
+  Verso F: 10
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo E:
+  Verso A: 6
+  Verso B: 7
+  Verso C: 9
+  Verso D: 8
+  Verso E: 0
+  Verso F: 2
+
+----------------------
+
+----------------------
+Tabella di instradamento per nodo F:
+  Verso A: 4
+  Verso B: 5
+  Verso C: 7
+  Verso D: 10
+  Verso E: 2
+  Verso F: 0
+
+----------------------

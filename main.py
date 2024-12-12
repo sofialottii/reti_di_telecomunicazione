@@ -1,4 +1,3 @@
-
 import sys
 
 #inizializzo un nodo
@@ -39,6 +38,7 @@ class Node:
 class Network:
     def __init__(self):
         self.nodes = {}
+        self.output_lines = []
 
     """crea un nodo con il nome name e lo aggiunge alla rete """
     def add_node(self, name):
@@ -63,7 +63,9 @@ class Network:
     non è possibile più alcun aggiornamento) e le tabelle di routing finali"""
 
     def simulate(self):
+        self.output_lines.append("TABELLE DI INSTRADAMENTO INIZIALI")
         print("TABELLE DI INSTRADAMENTO INIZIALI")
+
         self.print_routing_tables()
 
         while True:
@@ -75,21 +77,33 @@ class Network:
             if updates == 0:
                 break
 
-        print("\nTabelle di Routing finali:\n")
+        self.output_lines.append("\nTabelle di Routing finali:\n")
+        print("Tabelle di Routing finali:\n")
+
         self.print_routing_tables()
+        self.write_to_file("risultati.txt")
 
     def print_routing_tables(self):
         for node in self.nodes.values():
+            self.output_lines.append("----------------------")
+            self.output_lines.append(str(node))
+            self.output_lines.append("----------------------\n")
+
             print("----------------------")
             print(node)
             print("----------------------\n")
+
+    def write_to_file(self, filename):
+        with open(filename, "w") as file:
+            file.write("\n".join(self.output_lines))
+    
 
 
 if __name__ == "__main__":
     network = Network()
     
     #Creazione nodi
-    for node_name in ["A", "B", "C", "D"]:
+    for node_name in ["A", "B", "C", "D", "E", "F"]:
         network.add_node(node_name)
 
     #Creazione connessioni (link) e relativi costi
@@ -98,6 +112,9 @@ if __name__ == "__main__":
     network.add_link("B", "C", 2)
     network.add_link("B", "D", 6)
     network.add_link("C", "D", 3)
+    network.add_link("A", "F", 4)
+    network.add_link("E", "F", 2)
+    network.add_link("D", "E", 8)
 
     #Simulazione del protocollo di routing
     network.simulate()
