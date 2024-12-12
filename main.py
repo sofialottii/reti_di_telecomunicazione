@@ -1,3 +1,10 @@
+"""
+Elaborato: Python, Simulazione di Protocollo di Routing
+
+Matricola: 0001071300
+Cognome e Nome: Lotti Irene Sofia
+"""
+
 import sys
 
 #inizializzo un nodo
