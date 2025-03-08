@@ -1,10 +1,9 @@
-# reti_di_telecomunicazione
+# SIMULAZIONE PROTOCOLLO DI ROUTING
 Progetto in Python
 
+Traccia: Simulazione di Protocollo di Routing
 
-Progetto Python: Simulazione di Protocollo di Routing
-
-Creare uno script Python che simuli un protocollo di routing semplice, come il Distance Vector Routing. Gli studenti implementeranno gli aggiornamenti di routing tra i nodi, con il calcolo delle rotte più brevi.
+Informazioni: Creare uno script Python che simuli un protocollo di routing semplice, come il Distance Vector Routing. Gli studenti implementeranno gli aggiornamenti di routing tra i nodi, con il calcolo delle rotte più brevi.
 
 Obiettivi: Implementare la logica di aggiornamento delle rotte, gestione delle tabelle di routing e calcolo delle distanze tra nodi.
 
